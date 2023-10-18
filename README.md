@@ -15,7 +15,7 @@ Pada project ini kalian diminta untuk memisahkan logic pada repository kode kali
 - Folder seeders : berisi logic untuk mengisi table pada database
 - Folder models : berisi file yang merepresentasikan entitas table di database
 - Folder routes : berisi file routing endpoint
-- Folder middleware : berisi file yg berfungsi sebagai middleware 
+- Folder middlewares : berisi file yg berfungsi sebagai middleware 
 
 ### 2. ERD IMDB
 
