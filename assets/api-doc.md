@@ -516,13 +516,6 @@ Register user
 
 Request:
 
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
 
 - body:
 
@@ -553,13 +546,6 @@ Login user
 
 Request:
 
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
 
 - body:
 
