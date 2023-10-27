@@ -1,11 +1,8 @@
-# IH MOVIE DB
+# MOVIE DB
 
 description:
 Create CRUD API for Master Data of Movie
 Create CRUD API for Review of the Movie (one to many - relationship)
-Create Auth API for user registration n login.
-Add authentication and authorization
-
 
 List of available endpoints:
 
@@ -36,14 +33,6 @@ Create Master Data of Movie
 
 Request:
 
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
-
 - body:
 
 ```json
@@ -55,7 +44,6 @@ Request:
 
 Response:
 
-Success
 - status: 201
 - body:
 
@@ -69,30 +57,10 @@ Success
 }
 ```
 
-Forbidden
-- status: 404
-- body:
-
-```json
-{
-    "message": "akses hanya untuk user admin"
-}
-```
-
-Unauthorized
-- status: 401
-- body:
-
-```json
-{
-    "message": "user tidak terauthentikasi"
-}
-```
-
 ### GET /movie
 
 description:
-get all movie list
+get all genre list
 
 Response:
 
@@ -120,7 +88,7 @@ get detail movie Left join to its review
 
 Request:
 
-- param:
+- query param:
 
 ```json
 {
@@ -134,14 +102,25 @@ Response:
 - body:
 
 ```json
-{
-   "id": 1,
-   "title": "Ice Cold",
-   "description": "Pembunuhan Jessica Mirna",
-   "createdAt": "2023-10-10T04:39:48.537Z",
-   "updatedAt": "2023-10-10T04:39:48.537Z",
-   "Reviews": []
-}
+
+    {
+        "id": 1,
+        "title": "ICECOLD",
+        "description": "TESTING",
+        "createdAt": "2022-08-03T05:38:39.000Z",
+        "updatedAt": "2022-08-03T05:38:39.000Z",
+        "Reviews": [
+            {
+                "id": 1,
+                "title": "Mencengangkan!",
+                "description": "Gila sih untuk bisa ungkit lagi kasus ini",
+                "rating": 5,
+                "createdAt": "2022-08-03T05:38:39.000Z",
+                "updatedAt": "2022-08-03T05:38:39.000Z",
+                "MovieId": 1
+            }
+        ]
+    }
 ```
 
 ### PUT /movie/:id
@@ -151,16 +130,7 @@ edit single genre data
 
 Request:
 
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
-
-
-- param:
+- query param:
 
 ```json
 {
@@ -192,26 +162,6 @@ Response:
 }
 ```
 
-Forbidden
-- status: 404
-- body:
-
-```json
-{
-    "message": "akses hanya untuk user admin"
-}
-```
-
-Unauthorized
-- status: 401
-- body:
-
-```json
-{
-    "message": "user tidak terauthentikasi"
-}
-```
-
 ### DELETE /movie/:id
 
 description:
@@ -220,15 +170,7 @@ when deleting movie that is used in at least one review, the on delete associati
 
 Request:
 
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
-
-- param:
+- query param:
 
 ```json
 {
@@ -250,26 +192,6 @@ Response:
 }
 ```
 
-Forbidden
-- status: 404
-- body:
-
-```json
-{
-    "message": "akses hanya untuk user admin"
-}
-```
-
-Unauthorized
-- status: 401
-- body:
-
-```json
-{
-    "message": "user tidak terauthentikasi"
-}
-```
-
 ## Review
 
 ### POST /review
@@ -278,15 +200,6 @@ description:
 Create Review of Movie
 
 Request:
-
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
-
 
 - body:
 
@@ -311,36 +224,15 @@ Response:
   "description": "dari documentary ini malah makin curiga sama ayahnya mirna, karna dari kasus ini dia doang yang diuntungin, ya ga sih???",
   "rating": 5,
   "movieId": 1,
-  "userId": 1,
   "createdAt": "2023-10-10T04:39:48.537Z",
   "updatedAt": "2023-10-10T04:39:48.537Z",
-  "Movie": {
+  "movie": {
     "id": 1,
     "title": "Ice Cold",
     "description": "Documentary Kematian mirna",
     "createdAt": "2023-10-10T04:39:48.537Z",
     "updatedAt": "2023-10-11T04:39:48.537Z"
   }
-}
-```
-
-Forbidden
-- status: 404
-- body:
-
-```json
-{
-    "message": "user tidak punya akses data ini"
-}
-```
-
-Unauthorized
-- status: 401
-- body:
-
-```json
-{
-    "message": "user tidak terauthentikasi"
 }
 ```
 
@@ -363,10 +255,9 @@ Response:
       "description": "dari documentary ini malah makin curiga sama ayahnya mirna, karna dari kasus ini dia doang yang diuntungin, ya ga sih???",
       "rating": 5,
       "movieId": 1,
-      "userId": 1,
       "createdAt": "2023-10-10T04:39:48.537Z",
       "updatedAt": "2023-10-10T04:39:48.537Z",
-      "Movie": {
+      "movie": {
         "id": 1,
         "title": "Ice Cold",
         "description": "Documentary Kematian mirna",
@@ -384,15 +275,6 @@ description:
 edit single review data
 
 Request:
-
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
-
 
 - query param:
 
@@ -419,34 +301,11 @@ Response:
 
 ```json
 {
-  "id": 1,
   "title": "MENCENGANGKAN",
   "description": "dari documentary ini malah makin curiga sama ayahnya mirna, karna dari kasus ini dia doang yang diuntungin, ya ga sih???",
   "rating": 10,
-  "movieId": 1,
-  "userId": 1,
   "createdAt": "2023-10-10T04:39:48.537Z",
   "updatedAt": "2023-10-11T04:39:48.537Z"
-}
-```
-
-Forbidden
-- status: 404
-- body:
-
-```json
-{
-    "message": "user tidak punya akses data ini"
-}
-```
-
-Unauthorized
-- status: 401
-- body:
-
-```json
-{
-    "message": "user tidak terauthentikasi"
 }
 ```
 
@@ -458,15 +317,7 @@ when deleting review that is used in at least one movies, the on delete associat
 
 Request:
 
-- headers:
-
-```json
-{
-  "authorization" : "Bearer TokenFromJWT"
-}
-```
-
-- param:
+- query param:
 
 ```json
 {
@@ -485,85 +336,5 @@ Response:
 ```json
 {
   "message": "review dengan id 1 telah dihapus"
-}
-```
-
-Forbidden
-- status: 404
-- body:
-
-```json
-{
-    "message": "user tidak punya akses data ini"
-}
-```
-
-Unauthorized
-- status: 401
-- body:
-
-```json
-{
-    "message": "user tidak terauthentikasi"
-}
-```
-
-## Auth
-### POST /register
-
-description:
-Register user 
-
-Request:
-
-
-- body:
-
-```json
-{
-  "name": "Ice Cold",
-  "email": "vocasia@email.com",
-  "password" : "12345678",
-}
-```
-
-Response:
-
-Success
-- status: 201
-- body:
-
-```json
-{
-  "message" : "akun berhasil dibuat, silahkan login."
-}
-```
-
-### POST /login
-
-description:
-Login user 
-
-Request:
-
-
-- body:
-
-```json
-{
-  "email": "vocasia@email.com",
-  "password" : "12345678",
-}
-```
-
-Response:
-
-Success
-- status: 200
-- body:
-
-```json
-{
-  "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
 }
 ```
