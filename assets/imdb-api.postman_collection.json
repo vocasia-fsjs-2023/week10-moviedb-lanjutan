@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e8f41093-17bf-466c-af9d-62980f57bd22",
-		"name": "Week 10 IMDB api Vocasia lanjutan",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "7902833"
+		"_postman_id": "761edbc4-789c-4a3d-aae2-db1ab45ceede",
+		"name": "Week 9 IMDB api Vocasia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24826121"
 	},
 	"item": [
 		{
@@ -12,12 +12,6 @@
 				{
 					"name": "POST Create Movie",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -29,7 +23,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3000/movie"
+						"url": {
+							"raw": "http://localhost:3000/movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movie"
+							]
+						}
 					},
 					"response": []
 				},
@@ -38,31 +42,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3000/movie"
-					},
-					"response": []
-				},
-				{
-					"name": "GET Movie By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/movie/:id",
+							"raw": "http://localhost:3000/movie",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"movie",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "1"
-								}
+								"movie"
 							]
 						}
 					},
@@ -71,12 +59,6 @@
 				{
 					"name": "PUT Movie Update Data",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -112,12 +94,6 @@
 				{
 					"name": "PATCH Movie Update",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -153,12 +129,6 @@
 				{
 					"name": "DELETE Movie by ID",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -190,12 +160,6 @@
 				{
 					"name": "POST Create Review",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -207,7 +171,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3000/review"
+						"url": {
+							"raw": "http://localhost:3000/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review"
+							]
+						}
 					},
 					"response": []
 				},
@@ -216,19 +190,23 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3000/review"
+						"url": {
+							"raw": "http://localhost:3000/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "PUT Review Update Data",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -264,12 +242,6 @@
 				{
 					"name": "DELETE Review by ID",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2b2Nhc2lhQGVtYWlsLmNvbSIsImlhdCI6MTY5NzUyODM2M30.ciOlPjuhBoNGRmad98VOAYK4eUnwTPryphF9bfGd7-4"
-							}
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -290,53 +262,6 @@
 								}
 							]
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "User",
-			"item": [
-				{
-					"name": "Register",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"vocasia\",\n    \"email\":\"vocasia1@email.com\",\n    \"password\": \"12345678\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:3000/register"
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"vocasia@email.com\",\n    \"password\": \"12345678\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:3000/login"
 					},
 					"response": []
 				}
